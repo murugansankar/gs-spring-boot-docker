@@ -44,6 +44,7 @@ jobs:
      - name: Build with Maven, compile and build the Docker image
        run: |
         mvn spring-boot:build-image -Dmodule.image.name=spring-demo -Dmodule.image.repo=${{ env.ACR_NAME }}.azurecr.io
+       working-directory: complete
 
      # Azure Powershell Cli - ACR Login, Tag Image, Push Image
      - name: Azure Powershell Cli - ACR Login, Tag Image, Push Image
