@@ -10,7 +10,7 @@
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.example</groupId>
-	<artifactId>spring-boot-docker-complete</artifactId>
+	<artifactId>spring-demo</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>spring-boot-docker-complete</name>
 	<description>Demo project for Spring Boot</description>
@@ -18,8 +18,8 @@
 		<java.version>17</java.version>
 		<!-- Note: If your ACR name contains upper case characters, be sure to convert them to lower
 		case characters. -->
-		<docker.image.prefix>wingtiptoysregistry.azurecr.io</docker.image.prefix>
-		<jib-maven-plugin.version>2.5.2</jib-maven-plugin.version>
+		<module.image.repo>colinmac.azurecr.io</module.image.repo>
+		<module.image.name>${project.artifactId}:latest</module.image.name>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -39,20 +39,14 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
-			</plugin>
-			<plugin>
-				<artifactId>jib-maven-plugin</artifactId>
-				<groupId>com.google.cloud.tools</groupId>
-				<version>${jib-maven-plugin.version}</version>
 				<configuration>
-					<from>
-						<image>mcr.microsoft.com/java/jdk:8-zulu-alpine</image>
-					</from>
-					<to>
-						<image>${docker.image.prefix}/gs-spring-boot-docker</image>
-					</to>
+					<!-- <imageName>${module.image.name}</imageName> -->
+					<image>
+						<name>${module.image.repo}/${module.image.name}</name>
+					</image>
 				</configuration>
 			</plugin>
+
 		</plugins>
 	</build>
 
