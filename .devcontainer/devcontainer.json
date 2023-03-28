@@ -1,0 +1,28 @@
+{
+	"name": "AKS Spring Demo",
+	"image": "mcr.microsoft.com/devcontainers/java:0-17",
+	"features": {
+		"ghcr.io/devcontainers/features/java:1": {
+			"version": "none",
+			"installMaven": "true",
+			"installGradle": "false"
+		},
+		"ghcr.io/devcontainers/features/kubectl-helm-minikube:1": {
+			"version": "latest",
+			"helm": "latest",
+			"minikube": "none"
+		},
+		"docker-in-docker": "latest"
+	},
+	"remoteUser": "root",
+	"customizations": {
+		"extensions": [
+			"vscjava.vscode-java-pack",
+			"redhat.vscode-xml",
+			"pivotal.vscode-boot-dev-pack",
+			"ms-kubernetes-tools.aks-devx-tools",
+			"ms-kubernetes-tools.vscode-kubernetes-tools"
+		]
+	},
+	"forwardPorts": [8080]
+}
