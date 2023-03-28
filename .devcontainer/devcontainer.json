@@ -7,22 +7,27 @@
 			"installMaven": "true",
 			"installGradle": "false"
 		},
-		"ghcr.io/devcontainers/features/kubectl-helm-minikube:1": {
+		"ghcr.io/devcontainers/features/kubectl-helm-minikube:latest": {
 			"version": "latest",
 			"helm": "latest",
 			"minikube": "none"
 		},
-		"docker-in-docker": "latest"
+		"docker-in-docker": "latest",
+		"azure-cli": "latest",
+		"github-cli": "latest"
 	},
 	"remoteUser": "root",
 	"customizations": {
-		"extensions": [
-			"vscjava.vscode-java-pack",
-			"redhat.vscode-xml",
-			"pivotal.vscode-boot-dev-pack",
-			"ms-kubernetes-tools.aks-devx-tools",
-			"ms-kubernetes-tools.vscode-kubernetes-tools"
-		]
+		"vscode": {
+			"extensions": [
+				"vscjava.vscode-java-pack",
+				"redhat.vscode-xml",
+				"pivotal.vscode-boot-dev-pack",
+				"ms-kubernetes-tools.aks-devx-tools",
+				"ms-kubernetes-tools.vscode-kubernetes-tools"
+			]
+		}
+
 	},
 	"forwardPorts": [8080]
 }
