@@ -7,7 +7,7 @@ env:
   DEPLOYMENT_NAME: "springboot-demo"
   DEPLOYMENT_REGION: "eastus"
   ACR_NAME: "colinmac001"
-  CLUSTER_NAME: "aks-cluster"
+  CLUSTER_NAME: "demo-aks-cluster"
   CLUSTER_RG: "demo"
 
 on:
