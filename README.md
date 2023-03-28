@@ -93,7 +93,10 @@ The following steps walk you through building a Spring Boot web application and 
 1. Create a Service Principal for GitHub Actions
 
    ```azurecli
-   az ad sp create-for-rbac --scope /subscriptions/<subscription-id>/resourceGroups/demo --role Contributor  --sdk-auth
+    az ad sp create-for-rbac --scope /subscriptions/<subscription-id>/resourceGroups/demo --role Contributor  --sdk-auth
+    az role assignment create --assignee 872fbf72-5421-4210-a662-fed027ca118f --scope /subscriptions/9d9a4ca4-c3f1-463a-9fea-a6dcc8f4f63c/resourceGroups/demo
+
+
    ```
 
   Copy the JSON object for your service principal.
