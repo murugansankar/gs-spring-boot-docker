@@ -1,0 +1,17 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: gs-spring-boot-docker
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: gs-spring-boot-docker
+  template:
+    metadata:
+      labels:
+        app: gs-spring-boot-docker
+    spec:
+      containers:
+      - name: gs-spring-boot-docker
+        image: docker pull colinmac001.azurecr.io/spring-demo:latest
