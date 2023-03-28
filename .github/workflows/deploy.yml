@@ -57,27 +57,27 @@ jobs:
   #       azPSVersion: "latest"
 
   update_kubernetes: 
-    runs-on: ubuntu-latest
-    needs: build_and_push_java_image
-    steps:
-    - name: Login to Azure 
-      uses: azure/login@v1
-      with:
-        creds: ${{ secrets.AZURE_CREDENTIALS }}
-        environment: 'AzureCloud'
-        enable-AzPSSession: false
+      runs-on: ubuntu-latest
+      # needs: build_and_push_java_image
+      steps:
+      - name: Login to Azure 
+        uses: azure/login@v1
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
+          environment: 'AzureCloud'
+          enable-AzPSSession: false
 
-        # https://github.com/Azure/aks-set-context
-    - name: Set the target AKS cluster.
-      uses: Azure/aks-set-context@v1
-      with:
-        creds: '${{ secrets.AZURE_CREDENTIALS }}'
-        cluster-name: ${{ env.CLUSTER_NAME }}
-        resource-group: ${{ env.CLUSTER_RG }}
+          # https://github.com/Azure/aks-set-context
+      - name: Set the target AKS cluster.
+        uses: Azure/aks-set-context@v1
+        with:
+          creds: '${{ secrets.AZURE_CREDENTIALS }}'
+          cluster-name: ${{ env.CLUSTER_NAME }}
+          resource-group: ${{ env.CLUSTER_RG }}
 
-    - uses: Azure/k8s-deploy@v4
-      with:
-        namespace: 'default'
-        manifests: |
-            manifests
-        images: ${{ env.ACR_NAME }}.azurecr.io/spring-demo:latest
+      - uses: Azure/k8s-deploy@v4
+        with:
+          namespace: 'default'
+          manifests: |
+              manifests
+          images: ${{ env.ACR_NAME }}.azurecr.io/spring-demo:latest
