@@ -79,5 +79,5 @@ jobs:
         with:
           namespace: 'default'
           manifests: |
-              manifests
+              ./manifests
           images: ${{ env.ACR_NAME }}.azurecr.io/spring-demo:latest
