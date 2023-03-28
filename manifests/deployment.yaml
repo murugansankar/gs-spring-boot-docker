@@ -14,4 +14,4 @@ spec:
     spec:
       containers:
       - name: gs-spring-boot-docker
-        image: docker pull colinmac001.azurecr.io/spring-demo:latest
+        image: colinmac001.azurecr.io/spring-demo:latest
