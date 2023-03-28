@@ -60,6 +60,9 @@ jobs:
       runs-on: ubuntu-latest
       # needs: build_and_push_java_image
       steps:
+      - name: checkout code
+        uses: actions/checkout@v3
+
       - name: Login to Azure 
         uses: azure/login@v1
         with:
@@ -79,5 +82,5 @@ jobs:
         with:
           namespace: 'default'
           manifests: |
-              ./manifests
-          images: ${{ env.ACR_NAME }}.azurecr.io/spring-demo:latest
+              manifests
+          # images: ${{ env.ACR_NAME }}.azurecr.io/spring-demo:latest
