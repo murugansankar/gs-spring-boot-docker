@@ -6,7 +6,7 @@ name: Build and Deploy Application
 env:
   DEPLOYMENT_NAME: "springboot-demo"
   DEPLOYMENT_REGION: "eastus"
-  ACR_NAME: "colinmac001"
+  ACR_NAME: "murugan001"
   CLUSTER_NAME: "demo-aks-cluster"
   CLUSTER_RG: "demo"
 
